@@ -1,10 +1,15 @@
-const express = require("express")
-const app = express()
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config({
+    path: './config.env'
+})
 
-app.use(cors)
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+mongoose.connect(DB).then(() => console.log("DB connected!!"))
 
-app.get('/', (req, res) => {
-    res.send('Hello Quapri!')
-  })
-  
-app.listen("3001")
+const app = require('./app')
+const port = process.env.PORT || 3001;
+
+app.listen(port, () => {
+    console.log(`App is running on ${port}`)
+});
