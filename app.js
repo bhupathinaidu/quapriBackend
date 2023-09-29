@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+var cors = require('cors')
 
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
@@ -11,6 +12,7 @@ if(process.env.NODE_ENV === "development") {
 }
 
 app.use(express.json());
+app.use(cors())
 //app.use(morgan('dev'));
 
 app.use(express.json());
