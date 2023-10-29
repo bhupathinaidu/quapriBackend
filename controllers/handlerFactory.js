@@ -47,6 +47,18 @@ exports.createOne = Model =>
     });
   });
 
+exports.createMany = Model =>
+  catchAsync(async (req, res, next) => {
+    const doc = await Model.insertMany(req.body);
+
+    res.status(201).json({
+      status: 'success',
+      data: {
+        data: doc
+      }
+    });
+  });
+
 exports.getOne = (Model, popOptions) =>
   catchAsync(async (req, res, next) => {
     let query = Model.findById(req.params.id);

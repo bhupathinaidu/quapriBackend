@@ -22,4 +22,7 @@ exports.getProduct = catchAsync(async (req, res, next) => {
 
 });
 
+exports.getAllProducts = factory.getAll(Product);
+
 exports.addProduct = factory.createOne(Product);
+exports.addManyProduct = factory.createMany(Product);

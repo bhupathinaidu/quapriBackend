@@ -27,6 +27,10 @@ const productSchema = new mongoose.Schema({
             500: Number,
             1000: Number,
             1: Number,
+            small: Number,
+            medium: Number,
+            large: Number,
+            xLarge: Number
 
         },
         required: [true, 'Product price is required']

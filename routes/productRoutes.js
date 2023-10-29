@@ -5,7 +5,12 @@ const router = express.Router();
 
 router
     .route('/')
+    .get(productController.getAllProducts)
     .post(productController.addProduct)
+
+router
+    .route('/addMany')
+    .post(productController.addManyProduct)
 
 router
     .route('/:id')
