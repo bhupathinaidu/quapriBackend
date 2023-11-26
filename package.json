@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "shubham",
@@ -25,5 +25,8 @@
     "sharp": "^0.32.5",
     "util": "^0.12.5",
     "validator": "^13.11.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
